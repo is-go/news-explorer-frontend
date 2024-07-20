@@ -1,13 +1,20 @@
 .page {
-    background-image: url('../../assets/header-image.png');
-    background-size: cover;
-    max-width: 1440px;
-    height: 576px;
+    background-color: #F5F6F7;
     background-size: cover;
     background-position: center;
-    padding: 0 104px;
+    max-width: 1440px;
+    min-height: 100vh;
+    
     position: relative;
+}
 
+.page__image {
+    background-image: url('../../assets/header-image.png');
+    background-size: cover;
+    background-position: center;
+    width: 1440px;
+    height: 576px;
+    position: absolute;
 }
 
 .page__border {
@@ -20,6 +27,5 @@
 }
 
 .page__section {
-    max-width: 1360px;
     margin: 0 auto;
 }

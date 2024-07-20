@@ -12,11 +12,12 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
     height: 496px;
     justify-content: center;
     align-items: center;
-    color: #fff
+    color: #fff;
+    position: relative;
+        z-index: 2;
 }
 
 .main__title{

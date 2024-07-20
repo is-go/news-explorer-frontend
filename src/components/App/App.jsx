@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews"
+import NothingFound from "../NothingFound/NothingFound";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className="page">
+      <div className="page__image"></div>
       <div className="page__border"></div>
       <div className="page__section">
         <Header loggedIn={loggedIn} />
@@ -20,6 +22,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/saved-articles" element={<SavedNews />} />
+        </Routes>
+        <Routes>
+          <Route path="/not" element={<NothingFound />} />
         </Routes>
         <About />
         <Footer />

@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: space-between;
     font-family: Roboto-400;
-    padding: 13px 0;
+    padding: 13px 104px;
+    background-color: #fff;
 }
 
 .footer__text {
