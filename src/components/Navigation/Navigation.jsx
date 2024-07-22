@@ -2,18 +2,24 @@ import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import logOutIcon from "../../assets/logout.png";
 
-function Navigation({ loggedIn }) {
+function Navigation({ loggedIn, handleLoginButton, }) {
   return (
     <nav className="nav">
-      <NavLink to="/" className="nav__text nav__home" activeclassname="active" exact>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "nav__text nav__home active" : "nav__text nav__home"
+        }
+      >
         Home
       </NavLink>
       {loggedIn ? (
         <>
           <NavLink
             to="/saved-articles"
-            className="nav__text nav__saved"
-            activeclassname="active"
+            className={({ isActive }) =>
+              isActive ? "nav__text nav__saved active" : "nav__text nav__saved"
+            }
           >
             Saved Articles
           </NavLink>
@@ -23,7 +29,11 @@ function Navigation({ loggedIn }) {
           </button>
         </>
       ) : (
-        <button type="button" className="nav__button">
+        <button
+          type="button"
+          className="nav__button"
+          onClick={handleLoginButton}
+        >
           Sign in
         </button>
       )}

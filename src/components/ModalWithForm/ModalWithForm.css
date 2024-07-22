@@ -1,0 +1,157 @@
+@font-face {
+    src: url("../../vendor/fonts/roboto-900.woff") format("woff");
+    font-family: "Roboto-900";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
+    font-family: "Inter-500";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/inter-400-regular.woff") format("woff");
+    font-family: "Inter-400";
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #0000004d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter-400;
+    visibility: hidden;
+    z-index: 20;
+}
+
+.modal_opened {
+    visibility: visible;
+}
+
+
+.modal__content {
+    position: relative;
+    background-color: #fff;
+    padding: 34px 36px 28px;
+    max-width: 430px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 31px;
+    color: #E6E8EB;
+}
+
+.modal__title {
+    font-family: Roboto-900;
+    color: #1A1B22;
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.modal__close {
+    background-image: url(../../assets/close.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+.modal__close:hover {
+    cursor: pointer;
+}
+
+.modal__label {
+    color: #2F71E5;
+    font-size: 12px;
+    line-height: 14.5px;
+    font-weight: 400;
+}
+
+.modal__input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E6E8EB;
+    padding: 0;
+    padding-top: 9.5px;
+    padding-bottom: 6px;
+    color: #000;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+input::placeholder {
+    color: #E6E8EB;
+}
+
+.modal__error {
+    font-family: Inter-400;
+    font-size: 12px;
+    line-height: 14.5px;
+    color: #FF0000;
+}
+
+.modal__error_signup {
+    padding-bottom: 8px;
+}
+
+
+.modal__button-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__submit {
+    font-family: Roboto-500;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: #2F71E5;
+    color: white;
+    border-radius: 130px;
+    border: none;
+    width: 100%;
+    height: 64px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 5px 15px 0px #0E1A3933;
+
+}
+
+.modal__submit:hover {
+    background-color: #2A65CC;
+    cursor: pointer;
+}
+
+.modal__submit:disabled {
+    background-color: #E6E8EB;
+    color: #B6BCBF;
+    cursor: default;
+    box-shadow: none;
+}
+
+.modal__other-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 16px;
+}
+
+.modal__span {
+    color: #2F71E5;
+}

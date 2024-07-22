@@ -1,0 +1,25 @@
+@font-face {
+    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
+    font-family: "Roboto Slab-400";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
+    font-family: "Roboto-400";
+}
+
+/* .not-found {}
+
+.not-found__image {} */
+
+.not-found__title {
+    font-family: Roboto Slab-400;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.not-found__text {
+    font-family: Roboto-400;
+    font-size: 18px;
+    line-height: 24px;
+}
