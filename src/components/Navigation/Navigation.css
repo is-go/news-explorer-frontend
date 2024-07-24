@@ -5,6 +5,7 @@
 
 .nav {
     display: flex;
+    align-items: baseline;
     font-family: Roboto-500;
     font-size: 18px;
     line-height: 24px;
@@ -12,22 +13,37 @@
     gap: 40px;
 }
 
+
 .nav__text {
     text-decoration: none;
     color: #fff;
-    margin-top: 24px;
-    padding: 0px 9.5px 25px;
+    padding: 0px 9.5px 26px;
     display: inline-block;
     text-align: center;
+    margin: 0;
+}
+
+.nav__text_saved{
+    color: #1A1B22;
+}
+
+/* .nav__text_logout {
+
+} */
+
+.nav__text_logout-saved {
+    color: #1A1B22;
+    padding: 0;
 }
 
 .nav__home.active {
     border-bottom: 3px solid #fff;
+    
 }
 
-.nav__saved {
-    padding: 0px 32px 20px;
-}
+/* .nav__saved {
+    
+} */
 
 .nav__saved.active {
     border-bottom: 3px solid #000;
@@ -35,7 +51,9 @@
 
 .nav__button {
     width: 176px;
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
     background-color: transparent;
     border: 1px solid #fff;
@@ -44,5 +62,17 @@
     color: #fff;
     height: 48px;
     position: relative;
-    top: 12px;
+}
+
+.nav__button_saved {
+border-color: #1A1B22;
+}
+
+.nav__button_logout{
+    width: 112px;
+}
+
+.nav__logout-image{
+    width: 16px;
+height: 17.4px;
 }

@@ -5,11 +5,11 @@
 
 .header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    padding: 4.5px 104px;
+    padding: 16px 104px 0px;
 }
 
 .header__title {
@@ -17,4 +17,9 @@
     font-size: 20px;
     line-height: 24px;
     color: #fff;
+    margin: 0;
+}
+
+.header__title_saved {
+    color:#1A1B22;
 }

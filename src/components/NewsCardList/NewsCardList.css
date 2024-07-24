@@ -1,0 +1,12 @@
+.cards{
+    min-height: 1292px;
+    padding: 62px 102px;
+}
+
+.cards__list{
+    display: flex;
+        flex-wrap: wrap;
+    gap: 16px;
+    margin: 0;
+    padding: 0
+}

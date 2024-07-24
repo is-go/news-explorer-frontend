@@ -1,0 +1,148 @@
+@font-face {
+    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
+    font-family: "Roboto Slab-400";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-slab-700.woff") format("woff");
+    font-family: "Roboto Slab-700";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
+    font-family: "Roboto-500";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
+    font-family: "Roboto-400";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/SourceSansPro-Regular.woff");
+    font-family: "Source Sans Pro-400";
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 400px;
+    min-height: 576px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+/* .card__img {
+    
+} */
+
+.card__header {
+    display: flex;
+    font-family: Roboto-500;
+    justify-content: space-between;
+    position: absolute;
+    align-items: center;
+    padding-left: 24px;
+    width: 352px;
+}
+
+.card__topic {
+    font-size: Roboto-500;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 10px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.card__note {
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 41px;
+    top: -12px;
+    visibility: hidden;
+    justify-content: center;
+    padding: 0px 26px;
+white-space: nowrap;
+}
+
+.card__button {
+    background-color: #fff;
+    height: 40px;
+    max-width: 40px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.card__button:hover .card__note {
+    visibility: visible;
+}
+
+.card__button-img {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+}
+
+/* trash has two colors */
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 24px;
+    max-width: 352px;
+    min-height: 304px;
+}
+
+.card__date {
+    font-family: Source Sans Pro-400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+    margin: 0;
+    padding: 20px 0px 12px;
+}
+
+.card__title {
+    font-family: Roboto Slab-700;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1A1B22;
+    margin: 0;
+    padding-bottom: 16px;
+}
+
+.card__text {
+    font-family: Roboto-400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1A1B22;
+    margin: 0;
+}
+
+.card__source {
+    font-family: Roboto Slab-700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #B6BCBF;
+    margin: 0;
+    position: absolute;
+    bottom: 24px;
+}

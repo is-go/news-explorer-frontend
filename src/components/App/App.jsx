@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
-import NothingFound from "../NothingFound/NothingFound";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 
@@ -12,7 +11,8 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const location = useLocation();
+  const [loggedIn, setLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("");
 
   const handleSignUpButton = () => setActiveModal("signup");
@@ -45,15 +45,20 @@ function App() {
 
   return (
     <div className="page">
-      <div className="page__image"></div>
+      <div
+        className={`page__image ${location.pathname === "/saved-articles" ? "page__image_saved" : ""}`}
+      ></div>
       <div className="page__border"></div>
       <div className="page__section">
         <Header loggedIn={loggedIn} handleLoginButton={handleLoginButton} />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/saved-articles" element={<SavedNews />} />
+          <Route
+            path="/saved-articles"
+            element={<SavedNews loggedIn={loggedIn} />}
+          />
         </Routes>
-        <About />
+        {location.pathname === "/" && <About />}
         <Footer />
       </div>
       <RegisterModal

@@ -4,7 +4,6 @@
     background-position: center;
     max-width: 1440px;
     min-height: 100vh;
-    
     position: relative;
 }
 
@@ -12,9 +11,16 @@
     background-image: url('../../assets/header-image.png');
     background-size: cover;
     background-position: center;
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     height: 576px;
     position: absolute;
+}
+
+.page__image_saved {
+    background-image: none;
+    background-color: #fff;
+    height: 374px;
 }
 
 .page__border {

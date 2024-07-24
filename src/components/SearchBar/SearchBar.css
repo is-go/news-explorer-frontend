@@ -1,0 +1,56 @@
+@font-face {
+    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
+    font-family: "Roboto-500";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
+    font-family: "Roboto-400";
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-bar__form {
+    display: flex;
+    width: 100%;
+    max-width: 608px;
+    min-height: 64px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.search-bar__input {
+    border: none;
+    border-radius: 130px;
+    width: 100%;
+    font-family: Roboto-400;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0;
+    padding-left: 24px;
+    outline: none;
+}
+
+.search-bar__button {
+    position: absolute;
+    right: -4px;
+    background-color: #2F71E5;
+    color: white;
+    font-family: Roboto-400;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+    border-radius: 130px;
+    padding: 20px 56px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar__button:hover {
+    background-color: #2A65CC;
+}

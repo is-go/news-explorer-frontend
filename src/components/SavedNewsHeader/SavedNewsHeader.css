@@ -1,0 +1,51 @@
+@font-face {
+    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
+    font-family: "Roboto Slab-400";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
+    font-family: "Roboto-400";
+}
+
+@font-face {
+    src: url("../../vendor/fonts/roboto-700.woff") format("woff");
+    font-family: "Roboto-700";
+}
+
+.saved-header {
+    font-family: Roboto-400;
+    color: #1A1B22;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 104px;
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 530px;
+}
+
+.saved-header__title {
+    font-weight: 400;
+    margin: 0;
+    padding-top: 40px;
+}
+
+.saved-header__header {
+    font-family: Roboto Slab-400;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0;
+    padding: 28px 0px 30px;
+}
+
+.saved-header__keywords {
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.saved-header__span{
+    font-family: Roboto-700;
+    margin: 0;
+}

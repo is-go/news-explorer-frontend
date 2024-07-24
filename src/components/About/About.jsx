@@ -1,5 +1,5 @@
 import "./About.css";
-import author from "../../assets/author-section-image.png";
+import author from "../../assets/author.jpg";
 
 function About() {
   return (
@@ -17,8 +17,7 @@ function About() {
         </p>
         <p className="about__text">
           You can also talk about your experience with TripleTen, what you
-          learned there, and how you can help potential customers.
-        </p>
+          learned there, and how you can help potential customers.</p>
       </div>
     </section>
   );

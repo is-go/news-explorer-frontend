@@ -1,4 +1,16 @@
-.preLoader {
+@font-face {
+    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
+    font-family: "Roboto-400";
+}
+
+.preloader__ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 282px;
+}
+
+.preloader__circle {
     display: block;
     width: 50px;
     height: 50px;
@@ -15,6 +27,14 @@
     margin: auto;
 
     animation: spin .75s infinite linear;
+}
+
+.preloader__text {
+    font-family: Roboto-400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+    padding-top: 24px;
 }
 
 @keyframes spin {

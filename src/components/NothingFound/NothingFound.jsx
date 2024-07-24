@@ -3,7 +3,7 @@ import notFound from "../../assets/not-found.png"
 
 function NothingFound() {
     return (
-      <section className="not-found">
+      <section className="notfound">
         <img
           src={notFound}
           alt="image to illustrate search not found"
