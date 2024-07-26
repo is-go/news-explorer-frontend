@@ -2,14 +2,12 @@ import React from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-function NewsCardList() {
-  const cards = Array(6).fill(<NewsCard />);
-
+function NewsCardList({ savedArticles, token }) {
   return (
     <div className="cards">
       <ul className="cards__list">
-        {cards.map((card, index) => (
-          <React.Fragment key={index}>{card}</React.Fragment>
+        {savedArticles.map((article) => (
+          <NewsCard key={article._id} article={article} token={token} />
         ))}
       </ul>
     </div>

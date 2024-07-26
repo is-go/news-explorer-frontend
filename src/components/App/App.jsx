@@ -9,15 +9,27 @@ import Footer from "../Footer/Footer";
 
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import {
+  getArticles,
+  saveArticle,
+  deleteArticle,
+  getSavedArticles,
+} from "../../utils/newsApi";
+import SearchForm from "../SearhForm/SearchForm";
 
 function App() {
   const location = useLocation();
   const [loggedIn, setLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("");
+  const [articles, setArticles] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const handleSignUpButton = () => setActiveModal("signup");
   const handleLoginButton = () => setActiveModal("login");
   const closeActiveModal = () => setActiveModal("");
+
+// console.log(articles);
+// console.log(savedArticles);
 
   useEffect(() => {
     if (!activeModal) return;
@@ -43,6 +55,42 @@ function App() {
     };
   }, [activeModal]);
 
+  const fetchArticles = (topic) => {
+    getArticles(topic)
+      .then((data) => setArticles(data.articles))
+      .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    if (loggedIn) {
+      getSavedArticles()
+        .then((data) => setSavedArticles(data))
+        .catch((err) => console.error(err));
+    }
+  }, [loggedIn]);
+
+
+  const handleSave = () => {
+    if (isSaved) {
+      deleteArticle(article._id, token).then(() => {
+        // Handle successful deletion
+      });
+    } else {
+      saveArticle(article, token).then(() => {
+        // Handle successful save
+      });
+    }
+  };
+
+  //////unsave??????//////////////////////////////////////////////////
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="page">
       <div
@@ -55,9 +103,18 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route
             path="/saved-articles"
-            element={<SavedNews loggedIn={loggedIn} />}
+            element={
+              <SavedNews loggedIn={loggedIn} savedArticles={savedArticles} />
+            }
           />
         </Routes>
+        {location.pathname === "/" && (
+          <SearchForm
+            articles={articles}
+            
+            handleSave={handleSave}
+          />
+        )}
         {location.pathname === "/" && <About />}
         <Footer />
       </div>
