@@ -21,9 +21,10 @@
     display: inline-block;
     text-align: center;
     margin: 0;
+    cursor: url(../../assets/pointer.svg), auto;
 }
 
-.nav__text_saved{
+.nav__text_saved {
     color: #1A1B22;
 }
 
@@ -38,7 +39,7 @@
 
 .nav__home.active {
     border-bottom: 3px solid #fff;
-    
+
 }
 
 /* .nav__saved {
@@ -58,21 +59,21 @@
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 120px;
-    cursor: pointer;
+    cursor: url(../../assets/pointer.svg), auto;
     color: #fff;
     height: 48px;
     position: relative;
 }
 
 .nav__button_saved {
-border-color: #1A1B22;
+    border-color: #1A1B22;
 }
 
-.nav__button_logout{
+.nav__button_logout {
     width: 112px;
 }
 
-.nav__logout-image{
+.nav__logout-image {
     width: 16px;
-height: 17.4px;
+    height: 17.4px;
 }

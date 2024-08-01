@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 const LoginModal = ({
   closeActiveModal,
   isOpen,
-  handleLogin,
   handleSignUpButton,
+  handleLoginSubmit,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +31,7 @@ const LoginModal = ({
     e.preventDefault();
 
     if (!errors.email) {
-      handleLogin({ email, password });
+      handleLoginSubmit(email, password);
     }
   }
 
@@ -40,9 +40,9 @@ const LoginModal = ({
       title="Sign in"
       closeActiveModal={closeActiveModal}
       handleSubmit={handleSubmit}
-      buttonText="Log In"
+      buttonText="Log in"
       isOpen={isOpen}
-      otherModalSpan=" Sign Up"
+      otherModalSpan=" Sign up"
       otherModal={handleSignUpButton}
     >
       <label className="modal__label">
@@ -79,4 +79,3 @@ const LoginModal = ({
 };
 
 export default LoginModal;
-

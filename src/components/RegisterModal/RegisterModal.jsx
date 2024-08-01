@@ -41,19 +41,18 @@ const RegisterModal = ({
     e.preventDefault();
     if (!errors.email) {
       handleSignUp({ email, password, username });
-      closeActiveModal();
     }
   }
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="Sign up"
       closeActiveModal={closeActiveModal}
       handleSubmit={handleSubmit}
-      buttonText="Next"
+      buttonText="Sign up"
       isOpen={isOpen}
       otherModal={handleLoginButton}
-      otherModalSpan=" Log In"
+      otherModalSpan=" Log in"
       errorSpan={errors.email}
     >
       <label className="modal__label">

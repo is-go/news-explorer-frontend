@@ -47,7 +47,7 @@
     border: none;
     border-radius: 130px;
     padding: 20px 56px;
-    cursor: pointer;
+    cursor: url(../../assets/pointer.svg), auto;
     transition: background-color 0.3s ease;
 }
 

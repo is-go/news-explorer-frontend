@@ -1,3 +1,8 @@
+@font-face {
+    src: url("../../vendor/fonts/inter-400-regular.woff") format("woff");
+    font-family: "Inter-400";
+}
+
 .page {
     background-color: #F5F6F7;
     background-size: cover;
@@ -34,4 +39,13 @@
 
 .page__section {
     margin: 0 auto;
+}
+
+.page__error-message {
+    display: flex;
+    justify-content: center;
+    font-family: Inter-400;
+    font-size: 12px;
+    line-height: 14.5px;
+    color: #FF0000;
 }

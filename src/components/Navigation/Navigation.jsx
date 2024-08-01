@@ -3,13 +3,16 @@ import "./Navigation.css";
 import logOutIcon from "../../assets/logout.svg";
 import logOutIconBlack from "../../assets/logout-black.svg";
 
-function Navigation({ loggedIn, handleLoginButton }) {
-const location = useLocation();
-const iconSrc = location.pathname === "/saved-articles" ? logOutIconBlack : logOutIcon;
+function Navigation({ loggedIn, handleLoginButton, handleLogoutSubmit }) {
+  const location = useLocation();
+  const iconSrc =
+    location.pathname === "/saved-articles" ? logOutIconBlack : logOutIcon;
 
   return (
     <nav
-      className={`nav ${location.pathname === "/saved-articles" ? "nav_saved" : ""}`}
+      className={`nav ${
+        location.pathname === "/saved-articles" ? "nav_saved" : ""
+      }`}
     >
       <NavLink
         to="/"
@@ -35,10 +38,17 @@ const iconSrc = location.pathname === "/saved-articles" ? logOutIconBlack : logO
           </NavLink>
           <button
             type="button"
-            className={`nav__button nav__button_logout ${location.pathname === "/saved-articles" ? "nav__button_saved" : ""}`}
+            className={`nav__button nav__button_logout ${
+              location.pathname === "/saved-articles" ? "nav__button_saved" : ""
+            }`}
+            onClick={handleLogoutSubmit}
           >
             <span
-              className={`nav__text_logout ${location.pathname === "/saved-articles" ? "nav__text_logout-saved" : ""}`}
+              className={`nav__text_logout ${
+                location.pathname === "/saved-articles"
+                  ? "nav__text_logout-saved"
+                  : ""
+              }`}
             >
               Elise
             </span>
@@ -52,7 +62,9 @@ const iconSrc = location.pathname === "/saved-articles" ? logOutIconBlack : logO
       ) : (
         <button
           type="button"
-          className={`nav__button ${location.pathname === "/saved-articles" ? "nav__button_saved" : ""}`}
+          className={`nav__button ${
+            location.pathname === "/saved-articles" ? "nav__button_saved" : ""
+          }`}
           onClick={handleLoginButton}
         >
           Sign in

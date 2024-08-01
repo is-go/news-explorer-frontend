@@ -1,18 +1,22 @@
 import "./SearchBar.css";
-import SearchForm from "../SearhForm/SearchForm";
 
-function SearchBar() {
+function SearchBar({ handleTopicChange, handleSearchSubmit }) {
   return (
     <div className="search-bar">
-      <form action="" className="search-bar__form">
+      <form
+        action="#"
+        className="search-bar__form"
+        onSubmit={handleSearchSubmit}
+      >
         <input
           type="text"
           className="search-bar__input"
           placeholder="Enter topic"
           minLength="1"
           maxLength="30"
+          onChange={handleTopicChange}
         />
-        <button type="button" name="search" className="search-bar__button">
+        <button type="submit" name="search" className="search-bar__button">
           Search
         </button>
       </form>

@@ -29,5 +29,9 @@
     text-decoration: none;
     color: #1A1B22;
     padding-right: 16px;
+    cursor: url(../../assets/pointer.svg), auto;
 }
 
+.footer__logo {
+    cursor: url(../../assets/pointer.svg), auto;
+}

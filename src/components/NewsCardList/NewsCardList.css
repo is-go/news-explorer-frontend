@@ -1,12 +1,23 @@
-.cards{
-    min-height: 1292px;
+.cards {
     padding: 62px 102px;
+
 }
 
-.cards__list{
+.cards__list {
     display: flex;
-        flex-wrap: wrap;
-    gap: 16px;
+    flex-wrap: wrap;
     margin: 0;
-    padding: 0
+    padding: 0;
+    list-style: none;
+}
+
+.cards__list>li {
+    flex: 1 1 calc(33.33% - 16px);
+    max-width: calc(33.33% - 16px);
+}
+
+@media (max-width: 1280px) {
+    .cards {
+        padding: 62px calc((100vw - 1280px) / 2);
+    }
 }

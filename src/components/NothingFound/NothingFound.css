@@ -10,6 +10,7 @@
 
 .not-found {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 374px;
@@ -18,7 +19,7 @@
 .not-found__image {
     width: 82.5px;
     height: 82.5px;
-} 
+}
 
 .not-found__title {
     font-family: Roboto Slab-400;

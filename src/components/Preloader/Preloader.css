@@ -3,11 +3,12 @@
     font-family: "Roboto-400";
 }
 
-.preloader__ {
+.preloader {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 282px;
+    position: relative;
 }
 
 .preloader__circle {
@@ -16,16 +17,8 @@
     height: 50px;
     border: 4px solid #444;
     border-bottom-color: #888;
-
     border-radius: 50%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     margin: auto;
-
     animation: spin .75s infinite linear;
 }
 
@@ -35,6 +28,7 @@
     line-height: 24px;
     color: #B6BCBF;
     padding-top: 24px;
+    margin: 0;
 }
 
 @keyframes spin {
