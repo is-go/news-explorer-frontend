@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useSavedLocation } from "../../contexts/LocationContext";
 import "./NewsCard.css";
 
 import deleteIcon from "../../assets/trash.svg";
@@ -9,8 +9,7 @@ import unsavedIconHover from "../../assets/save-hover.svg";
 import savedIcon from "../../assets/saved.svg";
 
 function NewsCard({ article, loggedIn, isSaved, handleToggleSave }) {
-  const location = useLocation();
-  const savedLocation = location.pathname === "/saved-articles";
+  const savedLocation = useSavedLocation();
   const isArticleSaved = isSaved.includes(article.title);
 
   const handleSaveClick = (title) => {

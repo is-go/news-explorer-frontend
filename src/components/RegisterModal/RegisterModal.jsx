@@ -6,6 +6,7 @@ const RegisterModal = ({
   closeActiveModal,
   handleSignUp,
   handleLoginButton,
+  isClicked,
 }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ const RegisterModal = ({
       otherModal={handleLoginButton}
       otherModalSpan=" Log in"
       errorSpan={errors.email}
+      isClicked={isClicked}
     >
       <label className="modal__label">
         Email
@@ -67,6 +69,7 @@ const RegisterModal = ({
           onChange={handleEmailChange}
           value={email}
           required
+          autoComplete="on"
         />
       </label>
       <label className="modal__label">
@@ -81,6 +84,7 @@ const RegisterModal = ({
           onChange={handlePasswordChange}
           value={password}
           required
+          autoComplete="on"
         />
       </label>
       <label className="modal__label">
@@ -95,6 +99,7 @@ const RegisterModal = ({
           onChange={handleUsernameChange}
           value={username}
           required
+          autoComplete="on"
         />
       </label>
     </ModalWithForm>

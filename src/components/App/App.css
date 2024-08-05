@@ -34,7 +34,7 @@
     left: 0;
     width: 100%;
     border-top: 1px solid #c4c4c4;
-    z-index: 1;
+    z-index: 5;
 }
 
 .page__section {
@@ -44,8 +44,57 @@
 .page__error-message {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     font-family: Inter-400;
     font-size: 12px;
     line-height: 14.5px;
     color: #FF0000;
+}
+
+@media (max-width: 768px) {
+    .page__image {
+        height: 400px;
+    }
+
+    .page__image_saved {
+        height: 270px;
+    }
+
+    .page__border {
+        top: 66px;
+    }
+
+    .page__error-message {
+        margin: 12px;
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 425px) {
+    .page {
+        max-width: 425px;
+    }
+
+    .page__image {
+        background-image: url(../../assets/mobile-background.jpg);
+        height: 536px;
+    }
+
+    .page__image_saved {
+        background-image: none;
+        height: 302px;
+    }
+
+    .page__border {
+        top: 56px;
+    }
+
+    .page__error-message {
+        max-width: 385px;
+    }
+
+    .page__no-scroll {
+        overflow: hidden;
+    }
 }

@@ -32,6 +32,52 @@
     cursor: url(../../assets/pointer.svg), auto;
 }
 
+.footer__media {
+    display: flex;
+    gap: 24px;
+}
+
 .footer__logo {
     cursor: url(../../assets/pointer.svg), auto;
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 18px 40px;
+    }
+
+    .footer__text {
+        margin: 0;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .footer {
+        position: relative;
+        padding: 20px 16px;
+        max-height: 176px;
+        min-width: 288px;
+    }
+
+    .footer__text {
+        position: absolute;
+        bottom: 22px;
+    }
+
+    .footer__links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 64px;
+    }
+
+    .footer__link-cont{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
 }

@@ -12,21 +12,16 @@ function About() {
       <div className="about__section">
         <h2 className="about__title">About the author</h2>
         <p className="about__text">
-          Hello there! I'm Isaic Gonzalez, a full-stack engineer with a passion
-          for both the frontend and backend of applications. I graduated from
-          TripleTen, where I picked up a bunch of skills like HTML, CSS,
-          JavaScript, and React on the frontend, and Node.js, Express, and
-          MongoDB on the backend. TripleTen really helped me understand the full
-          cycle of web development, from creating responsive designs to building
-          robust APIs.
+          Hello there! I'm Isaic Gonzalez, a full-stack engineer passionate
+          about both the frontend and backend of applications. At TripleTen, I
+          learned HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB,
+          covering the full cycle of web development.
         </p>
         <p className="about__text">
-          As an artist and musician, I bring a unique creative flair to my work,
-          ensuring that every project is not only functional but also visually
-          appealing and refined. This means I can help you bring your ideas to
-          life, ensuring everything looks great and works smoothly from start to
-          finish. Whether it's a sleek user interface or a powerful backend
-          system, I've got you covered.
+          As an artist and musician, I bring a creative flair to my work,
+          ensuring every project is functional, visually appealing, and refined.
+          Whether it's a sleek user interface or a powerful backend, I can help
+          bring your ideas to life.
         </p>
       </div>
     </section>

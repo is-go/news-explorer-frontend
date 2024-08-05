@@ -6,6 +6,7 @@ const LoginModal = ({
   isOpen,
   handleSignUpButton,
   handleLoginSubmit,
+  isClicked,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,6 +45,7 @@ const LoginModal = ({
       isOpen={isOpen}
       otherModalSpan=" Sign up"
       otherModal={handleSignUpButton}
+      isClicked={isClicked}
     >
       <label className="modal__label">
         Email
@@ -57,6 +59,7 @@ const LoginModal = ({
           className="modal__input"
           onChange={handleEmailChange}
           required
+          autoComplete="on"
         />
         {errors.email && <span className="modal__error">{errors.email}</span>}
       </label>
@@ -72,6 +75,7 @@ const LoginModal = ({
           className="modal__input"
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete="on"
         />
       </label>
     </ModalWithForm>

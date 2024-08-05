@@ -1,4 +1,5 @@
 import "./SavedNews.css";
+
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
@@ -10,6 +11,8 @@ function SavedNews({
   handleDelete,
   handleToggleSave,
 }) {
+
+  
   return (
     <main className="saved">
       <div className="saved_content">

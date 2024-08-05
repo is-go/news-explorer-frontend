@@ -10,6 +10,7 @@ function ModalWithForm({
   otherModalSpan,
   errorSpan,
   handleSubmit,
+  isClicked,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
@@ -30,7 +31,7 @@ function ModalWithForm({
             )}
             <button
               type="submit"
-              className="modal__submit"
+              className={`modal__submit ${isClicked ? "modal__submit_clicked" : ""}`}
               onClick={handleSubmit}
               // disabled
             >

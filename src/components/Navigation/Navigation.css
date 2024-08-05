@@ -17,7 +17,7 @@
 .nav__text {
     text-decoration: none;
     color: #fff;
-    padding: 0px 9.5px 26px;
+
     display: inline-block;
     text-align: center;
     margin: 0;
@@ -38,6 +38,7 @@
 }
 
 .nav__home.active {
+    padding: 0 10.5px 26px;
     border-bottom: 3px solid #fff;
 
 }
@@ -47,11 +48,12 @@
 } */
 
 .nav__saved.active {
+    padding: 0 31px 26px;
     border-bottom: 3px solid #000;
 }
 
 .nav__button {
-    width: 176px;
+    padding: 0 63px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -70,10 +72,41 @@
 }
 
 .nav__button_logout {
-    width: 112px;
+    padding: 0 21.5px;
 }
 
 .nav__logout-image {
     width: 16px;
     height: 17.4px;
+    padding-left: 13px;
+}
+
+@media (max-width: 768px) {
+
+    .nav {
+        font-size: 16px;
+    }
+
+
+    .nav__home.active {
+        padding: 0 10.5px 16px;
+    }
+
+
+    .nav__saved.active {
+        padding: 0 29px 16px;
+    }
+
+    .nav__button {
+        height: 40px;
+        padding: 0 51px;
+    }
+
+    .nav__button_logout {
+        padding: 0 17.5px;
+    }
+
+    .nav__logout-image {
+        padding-left: 13px;
+    }
 }

@@ -12,6 +12,7 @@
     display: flex;
     padding: 80px 104px;
     background-color: #fff;
+    align-items: center;
 }
 
 .about__image {
@@ -40,4 +41,55 @@
     font-family: Roboto-400;
     font-size: 18px;
     line-height: 24px;
+}
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 40px;
+        justify-content: center;
+    }
+
+    .about__section {
+        padding-left: 32px;
+    }
+
+    .about__title {
+        font-size: 30px;
+        line-height: 40px;
+        margin: 0;
+    }
+
+    .about__text {
+        margin: 0;
+        margin-top: 16px;
+    }
+
+    .about__image {
+
+        width: 232px;
+        height: 232px;
+    }
+}
+
+@media (max-width: 425px) {
+    .about {
+        padding: 24px 16px;
+        flex-direction: column;
+    }
+
+    .about__image {
+        width: 272px;
+        height: 272px;
+        padding: 0 8px 24px;
+    }
+
+    .about__section {
+        padding: 0;
+        max-width: 288px;
+    }
+
+    .about__text {
+        margin-top: 24px;
+    }
 }

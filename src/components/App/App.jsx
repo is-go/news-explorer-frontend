@@ -13,13 +13,16 @@ import Footer from "../Footer/Footer";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import CompletedModal from "../CompletedModal/CompletedModal";
-import { getArticles, searchArticles } from "../../utils/newsApi";
+import { searchArticles } from "../../utils/newsApi";
+import { LocationProvider } from "../../contexts/LocationContext";
+import MenuModal from "../MenuModal/MenuModal";
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(true);
   const [activeModal, setActiveModal] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
   const [topic, setTopic] = useState("");
   const [articles, setArticles] = useState([]);
   const [searchPerformed, setSearchPerformed] = useState(false);
@@ -31,11 +34,13 @@ function App() {
   const handleSignUpButton = () => setActiveModal("signup");
   const handleLoginButton = () => setActiveModal("login");
   const handleCompletedModal = () => setActiveModal("completed registration");
+  const handleMenuButton = () => setActiveModal("menu");
   const closeActiveModal = () => setActiveModal("");
-
-  console.log(articles);
-  console.log(savedArticles);
-  console.log(isSaved);
+  const handleClick = () => {
+   setIsClicked(true);
+   setTimeout(() => setIsClicked(false), 2000); 
+ };
+ 
 
   useEffect(() => {
     if (!activeModal) return;
@@ -61,9 +66,27 @@ function App() {
     };
   }, [activeModal]);
 
-  ///Allows Login on fake credentials in order to test functionality~
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 425 && activeModal) {
+        document.body.classList.add("page__no-scroll");
+      } else {
+        document.body.classList.remove("page__no-scroll");
+      }
+    };
+
+    handleResize(); // Call once to set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [activeModal]);
 
   const handleLoginSubmit = (email, password) => {
+    handleClick();
     setLoggedIn(true);
     localStorage.setItem("token", "sample-token");
     closeActiveModal();
@@ -83,6 +106,7 @@ function App() {
   };
 
   const handleSignUp = ({ email, password, username }) => {
+    handleClick();
     // Mock sign-up process
     console.log("User signed up:", { email, password, username });
     handleCompletedModal(); // Show the completed registration modal
@@ -123,6 +147,7 @@ function App() {
   };
 
   const handleSearchSubmit = (event) => {
+    handleClick();
     event.preventDefault();
     fetchArticles(topic);
   };
@@ -161,81 +186,97 @@ function App() {
   };
 
   return (
-    <div className="page">
-      <div
-        className={`page__image ${
-          location.pathname === "/saved-articles" ? "page__image_saved" : ""
-        }`}
-      ></div>
-      <div className="page__border"></div>
-      <div className="page__section">
-        <Header
-          loggedIn={loggedIn}
-          handleLoginButton={handleLoginButton}
-          handleLoginSubmit={handleLoginSubmit}
-          handleLogoutSubmit={handleLogoutSubmit}
-        />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Main
-                handleTopicChange={handleTopicChange}
-                handleSearchSubmit={handleSearchSubmit}
-              />
-            }
+    <LocationProvider>
+      <div className="page">
+        <div
+          className={`page__image ${
+            location.pathname === "/saved-articles" ? "page__image_saved" : ""
+          }`}
+        ></div>
+        <div className="page__border"></div>
+        <div className="page__section">
+          <Header
+            handleMenuButton={handleMenuButton}
+            loggedIn={loggedIn}
+            handleLoginButton={handleLoginButton}
+            handleLoginSubmit={handleLoginSubmit}
+            handleLogoutSubmit={handleLogoutSubmit}
+            isHidden={["login", "signup", "completed registration"].includes(
+              activeModal
+            )}
           />
-          <Route
-            path="/saved-articles"
-            element={
-              <SavedNews
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  handleTopicChange={handleTopicChange}
+                  handleSearchSubmit={handleSearchSubmit}
+                  isClicked={isClicked}
+                />
+              }
+            />
+            <Route
+              path="/saved-articles"
+              element={
+                <SavedNews
+                  loggedIn={loggedIn}
+                  isSaved={isSaved}
+                  savedArticles={savedArticles}
+                  handleToggleSave={handleToggleSave}
+                />
+              }
+            />
+          </Routes>
+          {location.pathname === "/" && loading && <Preloader />}
+          {location.pathname === "/" && error && (
+            <p className="page__error-message">{error}</p>
+          )}
+          {location.pathname === "/" &&
+            !loading &&
+            searchPerformed &&
+            !error &&
+            (articles.length > 0 ? (
+              <SearchForm
+                articles={articles}
                 loggedIn={loggedIn}
                 isSaved={isSaved}
-                savedArticles={savedArticles}
                 handleToggleSave={handleToggleSave}
               />
-            }
-          />
-        </Routes>
-        {location.pathname === "/" && loading && <Preloader />}
-        {location.pathname === "/" && error && (
-          <p className="page__error-message">{error}</p>
-        )}
-        {location.pathname === "/" &&
-          !loading &&
-          searchPerformed &&
-          !error &&
-          (articles.length > 0 ? (
-            <SearchForm
-              articles={articles}
-              loggedIn={loggedIn}
-              isSaved={isSaved}
-              handleToggleSave={handleToggleSave}
-            />
-          ) : (
-            <NothingFound />
-          ))}
-        {location.pathname === "/" && <About />}
-        <Footer />
+            ) : (
+              <NothingFound />
+            ))}
+          {location.pathname === "/" && <About />}
+          <Footer />
+        </div>
+        <RegisterModal
+          isOpen={activeModal === "signup"}
+          closeActiveModal={closeActiveModal}
+          handleSignUp={handleSignUp}
+          handleLoginButton={handleLoginButton}
+          isClicked={isClicked}
+        />
+        <LoginModal
+          isOpen={activeModal === "login"}
+          closeActiveModal={closeActiveModal}
+          handleSignUpButton={handleSignUpButton}
+          handleLoginSubmit={handleLoginSubmit}
+          isClicked={isClicked}
+        />
+        <CompletedModal
+          isOpen={activeModal === "completed registration"}
+          handleLoginButton={handleLoginButton}
+          closeActiveModal={closeActiveModal}
+        />
+        <MenuModal
+          isOpen={activeModal === "menu"}
+          loggedIn={loggedIn}
+          closeActiveModal={closeActiveModal}
+          handleLoginButton={handleLoginButton}
+          handleLogoutSubmit={handleLogoutSubmit}
+        />
       </div>
-      <RegisterModal
-        isOpen={activeModal === "signup"}
-        closeActiveModal={closeActiveModal}
-        handleSignUp={handleSignUp}
-        handleLoginButton={handleLoginButton}
-      />
-      <LoginModal
-        isOpen={activeModal === "login"}
-        closeActiveModal={closeActiveModal}
-        handleSignUpButton={handleSignUpButton}
-        handleLoginSubmit={handleLoginSubmit}
-      />
-      <CompletedModal
-        isOpen={activeModal === "completed registration"}
-        handleLoginButton={handleLoginButton}
-        closeActiveModal={closeActiveModal}
-      />
-    </div>
+    </LocationProvider>
   );
 }
 

@@ -23,3 +23,47 @@
 .header__title_saved {
     color: #1A1B22;
 }
+
+.header__menu-button {
+    display: none;
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 15px 40px 0;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .header {
+        align-items: center;
+        width: 90%;
+        padding: 16px;
+    }
+
+    .header_hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .header__title {
+        font-size: 16px;
+    }
+
+    .header__menu-button {
+        display: block;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+}
