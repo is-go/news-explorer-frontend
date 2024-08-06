@@ -44,7 +44,7 @@
 
 .card__img {
     width: 100%;
-    min-height: 272px;
+    height: 272px;
     height: calc(272px - (272px - 150px) * ((1024px - 100vw) / 824));
     object-fit: cover;
 }
@@ -225,6 +225,7 @@
     .card__img {
         width: 100%;
         min-height: 150px;
+        height: 150px;
     }
 
     .card__header {
@@ -272,8 +273,29 @@
 
 @media (max-width: 425px) {
     .card {
-max-width: 288px;
-width: 90%;
+        max-width: 288px;
+        width: 90%;
     }
-    
+
+    .card__img {
+       height: 196px;
+    }
+
+    .card__info {
+        max-width: 256px;
+        min-height: 244px;
+    }
+
+    .card__date {
+        padding: 16px 0 10px;
+    }
+
+    .card__title {
+        -webkit-line-clamp: 2;
+    }
+
+    .card__text {
+        padding-top: 14px;
+    }
+
 }

@@ -1,26 +1,20 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useSavedLocation } from "../../contexts/LocationContext";
 import "./Navigation.css";
 import logOutIcon from "../../assets/logout.svg";
 import logOutIconBlack from "../../assets/logout-black.svg";
 
 function Navigation({ loggedIn, handleLoginButton, handleLogoutSubmit }) {
-  const location = useLocation();
-  const iconSrc =
-    location.pathname === "/saved-articles" ? logOutIconBlack : logOutIcon;
+  const savedLocation = useSavedLocation();
+  const iconSrc = savedLocation ? logOutIconBlack : logOutIcon;
 
   return (
-    <nav
-      className={`nav ${
-        location.pathname === "/saved-articles" ? "nav_saved" : ""
-      }`}
-    >
+    <nav className={`nav ${savedLocation ? "nav_saved" : ""}`}>
       <NavLink
         to="/"
-        className={({ isActive }) =>
-          isActive
-            ? "nav__text nav__home active"
-            : "nav__text nav__text_saved nav__home"
-        }
+        className={`nav__text nav__home ${
+          savedLocation ? "nav__text_saved" : "nav__home_link"
+        }`}
       >
         Home
       </NavLink>
@@ -28,26 +22,22 @@ function Navigation({ loggedIn, handleLoginButton, handleLogoutSubmit }) {
         <>
           <NavLink
             to="/saved-articles"
-            className={({ isActive }) =>
-              isActive
-                ? "nav__text nav__text_saved nav__saved active"
-                : "nav__text nav__saved"
-            }
+            className={`nav__text nav__saved ${
+              savedLocation ? "nav__saved_link nav__text_saved" : ""
+            }`}
           >
             Saved Articles
           </NavLink>
           <button
             type="button"
             className={`nav__button nav__button_logout ${
-              location.pathname === "/saved-articles" ? "nav__button_saved" : ""
+              savedLocation ? "nav__button_saved" : ""
             }`}
             onClick={handleLogoutSubmit}
           >
             <span
               className={`nav__text_logout ${
-                location.pathname === "/saved-articles"
-                  ? "nav__text_logout-saved"
-                  : ""
+                savedLocation ? "nav__text_logout-saved" : ""
               }`}
             >
               Elise
@@ -63,7 +53,9 @@ function Navigation({ loggedIn, handleLoginButton, handleLogoutSubmit }) {
         <button
           type="button"
           className={`nav__button ${
-            location.pathname === "/saved-articles" ? "nav__button_saved" : ""
+            savedLocation.pathname === "/saved-articles"
+              ? "nav__button_saved"
+              : ""
           }`}
           onClick={handleLoginButton}
         >

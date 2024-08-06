@@ -11,17 +11,19 @@ function ModalWithForm({
   errorSpan,
   handleSubmit,
   isClicked,
+  isFormValid,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content">
-        <form action="#" className="modal__form">
+        <form action="#" className="modal__form" onSubmit={handleSubmit}>
           <h2 className="modal__title">{title}</h2>
           <button
             onClick={closeActiveModal}
             type="button"
             className="modal__close"
-          ></button>
+            aria-label="Close"
+          />
           {children}
           <div className="modal__button-cont">
             {errorSpan && (
@@ -32,8 +34,7 @@ function ModalWithForm({
             <button
               type="submit"
               className={`modal__submit ${isClicked ? "modal__submit_clicked" : ""}`}
-              onClick={handleSubmit}
-              // disabled
+              disabled={!isFormValid}
             >
               {buttonText}
             </button>

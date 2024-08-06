@@ -1,7 +1,8 @@
 import { useLocation } from "react-router-dom";
+import { useSavedLocation } from "../../contexts/LocationContext";
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
-import menuIcon from "../../assets/menu.svg"
+import menuIcon from "../../assets/menu.svg";
 import menuIconSaved from "../../assets/menu-black.svg";
 
 function Header({
@@ -9,30 +10,33 @@ function Header({
   handleLoginButton,
   handleLogoutSubmit,
   handleMenuButton,
-  isHidden
+  isHidden,
 }) {
-  const location = useLocation();
-  const savedLocation = location.pathname === "/saved-articles";
+const savedLocation = useSavedLocation();
 
   return (
     <header className={`header ${isHidden ? "header_hidden" : ""}`}>
-      <p
+      <h1
         className={`header__title ${
           savedLocation ? "header__title_saved" : ""
         }`}
       >
         NewsExplorer
-      </p>
-      <button className="header__menu-button" onClick={handleMenuButton}>
+      </h1>
+      <button
+        className="header__menu-button"
+        onClick={handleMenuButton}
+        aria-label="Menu"
+      >
         <img src={savedLocation ? menuIconSaved : menuIcon} alt="Menu" />
       </button>
-      <section className="header__navigation">
+      <nav className="header__navigation">
         <Navigation
           loggedIn={loggedIn}
           handleLoginButton={handleLoginButton}
           handleLogoutSubmit={handleLogoutSubmit}
         />
-      </section>
+      </nav>
     </header>
   );
 }

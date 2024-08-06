@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <p className="footer__text">&copy; 2024 Supersite, Powered by News API</p>
 
-      <section className="footer__links">
+      <nav className="footer__links">
         <div className="footer__link-cont">
           <Link to="/" className="footer__link">
             Home
@@ -23,14 +23,17 @@ function Footer() {
           </a>
         </div>
         <div className="footer__media">
-          <a href="#">
-            <img src={githublogo} alt="github logo" className="footer__logo" />
+          <a href="https://github.com/is-go" aria-label="Github">
+            <img src={githublogo} alt="GitHub logo" className="footer__logo" />
           </a>
-          <a href="#">
-            <img src={fblogo} alt="facebook logo" className="footer__logo" />
+          <a
+            href="https://www.facebook.com/tripleten.tech/"
+            aria-label="Facebook"
+          >
+            <img src={fblogo} alt="Facebook logo" className="footer__logo" />
           </a>
         </div>
-      </section>
+      </nav>
     </footer>
   );
 }

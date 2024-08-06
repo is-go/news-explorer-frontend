@@ -1,5 +1,5 @@
 import "./MenuModal.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSavedLocation } from "../../contexts/LocationContext";
 
 import logOutIcon from "../../assets/logout.svg";
@@ -11,7 +11,6 @@ function MenuModal({
   handleLogoutSubmit,
   closeActiveModal,
 }) {
-  const location = useLocation();
   const savedLocation = useSavedLocation();
 
   return (
@@ -19,15 +18,17 @@ function MenuModal({
       <div className="menu__content">
         <div className="menu__header">
           <p className="menu__title">NewsExplorer</p>
-          <button className="menu__close" onClick={closeActiveModal}></button>
+          <button
+            className="menu__close"
+            onClick={closeActiveModal}
+            aria-label="Close"
+          ></button>
         </div>
         <div className="menu__options">
           <div className="menu__links">
-            <Link
-              to="/"
-              className="menu__link"
-              onClick={closeActiveModal}
-            >Home</Link>
+            <Link to="/" className="menu__link" onClick={closeActiveModal}>
+              Home
+            </Link>
             {loggedIn && (
               <Link
                 to="/saved-articles"
@@ -39,39 +40,31 @@ function MenuModal({
             )}
           </div>
           {loggedIn ? (
-            <>
-              <button
-                type="button"
-                className={`menu__button menu__button_logout ${
-                  location.pathname === "/saved-articles"
-                    ? "menu__button_saved"
-                    : ""
+            <button
+              type="button"
+              className={`menu__button menu__button_logout ${
+                savedLocation ? "menu__button_saved" : ""
+              }`}
+              onClick={handleLogoutSubmit}
+            >
+              <span
+                className={`menu__text_logout ${
+                  savedLocation ? "menu__text_logout-saved" : ""
                 }`}
-                onClick={handleLogoutSubmit}
               >
-                <span
-                  className={`menu__text_logout ${
-                    location.pathname === "/saved-articles"
-                      ? "menu__text_logout-saved"
-                      : ""
-                  }`}
-                >
-                  Elise
-                </span>
-                <img
-                  src={logOutIcon}
-                  alt="log out icon"
-                  className="menu__logout-image"
-                />
-              </button>
-            </>
+                Elise
+              </span>
+              <img
+                src={logOutIcon}
+                alt="Log out icon"
+                className="menu__logout-image"
+              />
+            </button>
           ) : (
             <button
               type="button"
               className={`menu__button ${
-                location.pathname === "/saved-articles"
-                  ? "menu__button_saved"
-                  : ""
+                savedLocation ? "menu__button_saved" : ""
               }`}
               onClick={handleLoginButton}
             >

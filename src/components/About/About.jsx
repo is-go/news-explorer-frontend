@@ -4,11 +4,7 @@ import author from "../../assets/author.jpg";
 function About() {
   return (
     <section className="about">
-      <img
-        className="about__image"
-        src={author}
-        alt="Image of the author"
-      ></img>
+      <img className="about__image" src={author} alt="Image of the author" />
       <div className="about__section">
         <h2 className="about__title">About the author</h2>
         <p className="about__text">

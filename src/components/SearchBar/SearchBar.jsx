@@ -1,8 +1,6 @@
 import "./SearchBar.css";
-import { useState } from "react";
 
-function SearchBar({ handleTopicChange, handleSearchSubmit, isClicked, }) {
-  
+function SearchBar({ handleTopicChange, handleSearchSubmit, isClicked }) {
   return (
     <div className="search-bar">
       <form
@@ -20,7 +18,11 @@ function SearchBar({ handleTopicChange, handleSearchSubmit, isClicked, }) {
           onChange={handleTopicChange}
           autoComplete="on"
         />
-        <button type="submit" name="search" className={`search-bar__button ${isClicked ? "search-bar__button_clicked" : "" }`}>
+        <button
+          type="submit"
+          name="search"
+          className={`search-bar__button ${isClicked ? "search-bar__button_clicked" : ""}`}
+        >
           Search
         </button>
       </form>

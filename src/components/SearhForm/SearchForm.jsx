@@ -36,5 +36,3 @@ function SearchForm({ articles, loggedIn, isSaved, handleToggleSave }) {
 }
 
 export default SearchForm;
-
-// Update search to filter if article contains [Removed]~mapping?

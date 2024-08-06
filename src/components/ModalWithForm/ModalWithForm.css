@@ -24,7 +24,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: #0000004d;
+    background-color: rgba(0,0,0,.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,6 +172,10 @@ input::placeholder {
 .modal__other-button_completed {
     padding-top: 14px;
     padding-left: 0;
+    font-family: Inter-400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #2F71E5;
 }
 
 .modal__span {
@@ -212,6 +216,14 @@ input::placeholder {
 
     .modal__label:nth-of-type(1) {
         padding: 0;
+    }
+
+    .modal__error {
+        top: 113px;
+    }
+
+    .modal__error_signup {
+        top: 277px
     }
 
     .modal__submit {

@@ -1,16 +1,17 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const LoginModal = ({
+function LoginModal({
   closeActiveModal,
   isOpen,
   handleSignUpButton,
   handleLoginSubmit,
   isClicked,
-}) => {
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "" });
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -25,8 +26,13 @@ const LoginModal = ({
       setEmail("");
       setPassword("");
       setErrors({ email: "" });
+      setIsFormValid(false);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsFormValid(email && password && !errors.email && !errors.password);
+  }, [email, password, errors]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -46,6 +52,7 @@ const LoginModal = ({
       otherModalSpan=" Sign up"
       otherModal={handleSignUpButton}
       isClicked={isClicked}
+      isFormValid={isFormValid}
     >
       <label className="modal__label">
         Email
@@ -80,6 +87,6 @@ const LoginModal = ({
       </label>
     </ModalWithForm>
   );
-};
+}
 
 export default LoginModal;

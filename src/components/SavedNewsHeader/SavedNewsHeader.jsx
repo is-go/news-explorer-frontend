@@ -1,6 +1,10 @@
 import "./SavedNewsHeader.css";
 
 function SavedNewsHeader({ savedArticles }) {
+
+
+/// Find amount of times keywords saved and display accordingly
+
   const keywordFrequency = savedArticles.reduce((acc, article) => {
     const keyword = article.keyword;
     acc[keyword] = (acc[keyword] || 0) + 1;

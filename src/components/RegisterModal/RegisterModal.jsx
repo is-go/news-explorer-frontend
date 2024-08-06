@@ -1,17 +1,18 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const RegisterModal = ({
+function RegisterModal({
   isOpen,
   closeActiveModal,
   handleSignUp,
   handleLoginButton,
   isClicked,
-}) => {
+}) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "" });
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -21,13 +22,8 @@ const RegisterModal = ({
     });
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleUsernameChange = (e) => setUsername(e.target.value);
 
   useEffect(() => {
     if (isOpen) {
@@ -35,15 +31,27 @@ const RegisterModal = ({
       setPassword("");
       setUsername("");
       setErrors({ email: "" });
+      setIsFormValid(false);
     }
   }, [isOpen]);
 
-  function handleSubmit(e) {
+  useEffect(() => {
+    setIsFormValid(
+      email &&
+        password &&
+        username &&
+        !errors.email &&
+        !errors.password &&
+        !errors.username
+    );
+  }, [email, password, username, errors]);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!errors.email) {
       handleSignUp({ email, password, username });
     }
-  }
+  };
 
   return (
     <ModalWithForm
@@ -56,6 +64,7 @@ const RegisterModal = ({
       otherModalSpan=" Log in"
       errorSpan={errors.email}
       isClicked={isClicked}
+      isFormValid={isFormValid}
     >
       <label className="modal__label">
         Email
@@ -64,7 +73,7 @@ const RegisterModal = ({
           name="email"
           minLength="1"
           maxLength="30"
-          placeholder="Email"
+          placeholder="Eneter email"
           className="modal__input"
           onChange={handleEmailChange}
           value={email}
@@ -79,7 +88,7 @@ const RegisterModal = ({
           name="password"
           minLength="1"
           maxLength="30"
-          placeholder="Password"
+          placeholder="Enter password"
           className="modal__input"
           onChange={handlePasswordChange}
           value={password}
@@ -94,7 +103,7 @@ const RegisterModal = ({
           name="username"
           minLength="1"
           maxLength="30"
-          placeholder="Username"
+          placeholder="Enter username"
           className="modal__input"
           onChange={handleUsernameChange}
           value={username}
@@ -104,6 +113,6 @@ const RegisterModal = ({
       </label>
     </ModalWithForm>
   );
-};
+}
 
 export default RegisterModal;

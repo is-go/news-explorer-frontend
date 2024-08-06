@@ -9,7 +9,8 @@ function CompletionModal({ isOpen, handleLoginButton, closeActiveModal }) {
           onClick={closeActiveModal}
           type="button"
           className="modal__close"
-        ></button>
+          aria-label="Close"
+        />
         <button
           className="modal__other-button modal__other-button_completed"
           type="button"
