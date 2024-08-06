@@ -13,7 +13,7 @@ Hello there! This is the 1st stage of the NewsExplorer App. In this stage a user
 
 # Deployment
 
-Check out the site on Github Pages:
+Check out the site on Github Pages: https://is-go.github.io/news-explorer-frontend/
 
 # Tech used
 
