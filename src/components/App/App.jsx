@@ -20,7 +20,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [topic, setTopic] = useState("");
