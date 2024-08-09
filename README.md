@@ -15,6 +15,8 @@ Hello there! This is the 1st stage of the NewsExplorer App. In this stage a user
 
 Check out the site on Github Pages: https://is-go.github.io/news-explorer-frontend/
 
+Strictly speaking, there is no backend as of right now. All request made will have to made on the pull requests until further stages are completed. Thank you for your patience.
+
 # Tech used
 
 - HTML5: For the structure and content of the app.
