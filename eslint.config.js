@@ -3,6 +3,7 @@ import pluginJs from "@eslint/js";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import reactJsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 import reactHooks from "eslint-plugin-react-hooks";
+import reactRefreshPlugin from "@vitejs/plugin-react-refresh"; 
 
 export default [
   {
