@@ -1,15 +1,21 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 13px 0px;
+    background-color: #fff;
 }
 
-.footer {
+.footer__content {
+    width: 89%;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: Roboto-400;
-    padding: 13px 104px;
-    background-color: #fff;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
 }
 
 .footer__text {
@@ -29,7 +35,7 @@
     text-decoration: none;
     color: #1A1B22;
     padding-right: 16px;
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
 }
 
 .footer__media {
@@ -38,7 +44,7 @@
 }
 
 .footer__logo {
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
     width: 20px;
     height: 20px;
 }
@@ -53,7 +59,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
 
     .footer {
         position: relative;
@@ -74,7 +80,7 @@
         padding-bottom: 64px;
     }
 
-    .footer__link-cont{
+    .footer__link-cont {
         display: flex;
         flex-direction: column;
         gap: 24px;

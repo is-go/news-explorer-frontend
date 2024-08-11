@@ -1,5 +1,5 @@
 import "./NothingFound.css";
-import notFound from "../../assets/not-found.png";
+import notFound from "../../images/not-found.png";
 
 function NothingFound() {
   return (

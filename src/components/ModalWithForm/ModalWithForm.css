@@ -1,34 +1,15 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-900.woff") format("woff");
-    font-family: "Roboto-900";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
-    font-family: "Roboto-500";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/inter-400-regular.woff") format("woff");
-    font-family: "Inter-400";
-}
-
 .modal {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0, .6);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Inter-400;
+    font-family: "Inter-400", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 400;
     visibility: hidden;
     z-index: 20;
 }
@@ -61,7 +42,11 @@
 }
 
 .modal__title {
-    font-family: Roboto-900;
+    font-family: 'Roboto-900',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 900;
     color: #1A1B22;
     margin: 0;
     font-size: 24px;
@@ -69,7 +54,7 @@
 }
 
 .modal__close {
-    background-image: url(../../assets/close.svg);
+    background-image: url(../../images/close.svg);
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
@@ -82,7 +67,7 @@
 }
 
 .modal__close:hover {
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
 }
 
 .modal__label {
@@ -112,7 +97,12 @@ input::placeholder {
 .modal__error {
     position: absolute;
     top: 143px;
-    font-family: Inter-400;
+    font-family: "Inter-400",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-weight: 400;
     font-size: 12px;
     line-height: 14.5px;
     color: #FF0000;
@@ -132,7 +122,11 @@ input::placeholder {
 }
 
 .modal__submit {
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     background-color: #2F71E5;
@@ -148,7 +142,7 @@ input::placeholder {
 
 .modal__submit:hover {
     background-color: #347EFF;
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
 }
 
 .modal__submit:disabled {
@@ -165,21 +159,31 @@ input::placeholder {
 .modal__other-button {
     background: transparent;
     border: none;
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
     padding-top: 16px;
 }
 
 .modal__other-button_completed {
     padding-top: 14px;
     padding-left: 0;
-    font-family: Inter-400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #2F71E5;
+    font-family: "Inter-400",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #2F71E5;
 }
 
 .modal__span {
-    font-family: Inter-400;
+    font-family: "Inter-400",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #2F71E5;
@@ -189,10 +193,10 @@ input::placeholder {
     font-size: 18px;
     line-height: 22px;
 
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
 }
 
-@media (max-width:425px) {
+@media (max-width:525px) {
     .modal__content {
         position: fixed;
         top: 56px;

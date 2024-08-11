@@ -1,9 +1,8 @@
-import { useLocation } from "react-router-dom";
 import { useSavedLocation } from "../../contexts/LocationContext";
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
-import menuIcon from "../../assets/menu.svg";
-import menuIconSaved from "../../assets/menu-black.svg";
+import menuIcon from "../../images/menu.svg";
+import menuIconSaved from "../../images/menu-black.svg";
 
 function Header({
   loggedIn,
@@ -12,7 +11,7 @@ function Header({
   handleMenuButton,
   isHidden,
 }) {
-const savedLocation = useSavedLocation();
+  const savedLocation = useSavedLocation();
 
   return (
     <header className={`header ${isHidden ? "header_hidden" : ""}`}>

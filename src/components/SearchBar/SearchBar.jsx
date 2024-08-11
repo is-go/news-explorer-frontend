@@ -1,6 +1,19 @@
+import { useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ handleTopicChange, handleSearchSubmit, isClicked }) {
+function SearchBar({
+  handleTopicChange,
+  handleSearchSubmit,
+  isClicked,
+  searchInputRef,
+}) {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleInputChange = (e) => {
+    handleTopicChange(e);
+    setIsActive(e.target.value.trim() !== ""); // Button is active if input filled
+  };
+
   return (
     <div className="search-bar">
       <form
@@ -15,13 +28,15 @@ function SearchBar({ handleTopicChange, handleSearchSubmit, isClicked }) {
           placeholder="Enter topic"
           minLength="1"
           maxLength="30"
-          onChange={handleTopicChange}
+          ref={searchInputRef}
+          onChange={handleInputChange}
           autoComplete="on"
         />
         <button
           type="submit"
           name="search"
           className={`search-bar__button ${isClicked ? "search-bar__button_clicked" : ""}`}
+          disabled={!isActive}
         >
           Search
         </button>

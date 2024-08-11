@@ -61,7 +61,7 @@ function RegisterModal({
       buttonText="Sign up"
       isOpen={isOpen}
       otherModal={handleLoginButton}
-      otherModalSpan=" Log in"
+      otherModalSpan="Sign in"
       errorSpan={errors.email}
       isClicked={isClicked}
       isFormValid={isFormValid}

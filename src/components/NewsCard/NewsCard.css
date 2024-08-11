@@ -1,30 +1,5 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
-    font-family: "Roboto Slab-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-700.woff") format("woff");
-    font-family: "Roboto Slab-700";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
-    font-family: "Roboto-500";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/SourceSansPro-Regular.woff");
-    font-family: "Source Sans Pro-400";
-}
-
 .card {
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
     max-width: 400px;
     width: 100%;
     min-width: 400px;
@@ -51,7 +26,11 @@
 
 .card__header {
     display: flex;
-    font-family: Roboto-500;
+    font-family: 'Roboto-500',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 500;
     justify-content: space-between;
     position: absolute;
     align-items: center;
@@ -60,7 +39,11 @@
 }
 
 .card__topic {
-    font-family: Roboto-500;
+    font-family: 'Roboto-500',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 500;
     font-size: 14px;
     line-height: 24px;
     background-color: #fff;
@@ -74,7 +57,11 @@
 }
 
 .card__topic_saved {
-    font-family: Roboto-500;
+    font-family: 'Roboto-500',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 500;
     font-size: 14px;
     line-height: 24px;
     background-color: #fff;
@@ -111,7 +98,7 @@
     border-radius: 10px;
     border: none;
     position: relative;
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
 }
 
 .card__button:hover .card__note {
@@ -153,7 +140,8 @@
 }
 
 .card__date {
-    font-family: Source Sans Pro-400;
+    font-family: "Source Sans Pro-400", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     color: #B6BCBF;
@@ -162,7 +150,11 @@
 }
 
 .card__title {
-    font-family: Roboto Slab-700;
+    font-family: 'Roboto Slab-700',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 700;
     font-size: 26px;
     line-height: 30px;
     color: #1A1B22;
@@ -176,7 +168,11 @@
 }
 
 .card__text {
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     color: #1A1B22;
@@ -191,7 +187,11 @@
 }
 
 .card__source {
-    font-family: Roboto Slab-700;
+    font-family: 'Roboto Slab-700',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 700;
     font-size: 16px;
     line-height: 20px;
     color: #B6BCBF;
@@ -202,6 +202,7 @@
 
 @media (max-width: 1400px) {
     .card {
+
         min-width: 320px;
     }
 
@@ -217,15 +218,14 @@
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
     .card {
-        min-width: 224px;
+        min-width: 278px;
     }
 
     .card__img {
-        width: 100%;
         min-height: 150px;
-        height: 150px;
+        height: 210px;
     }
 
     .card__header {
@@ -257,9 +257,6 @@
         text-overflow: ellipsis;
 
     }
-}
-
-@media (max-width: 768px) {
 
     .card__header {
         padding-left: 8px;
@@ -271,14 +268,30 @@
     }
 }
 
-@media (max-width: 425px) {
+
+@media (max-width: 956px) {
+
     .card {
-        max-width: 288px;
-        width: 90%;
+        min-width: 224px;
     }
 
     .card__img {
-       height: 196px;
+        min-height: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 525px) {
+    .card {
+        width: 288px;
+    }
+
+    .card__content {
+        max-width: 288px;
+    }
+
+    .card__img {
+        height: 196px;
     }
 
     .card__info {

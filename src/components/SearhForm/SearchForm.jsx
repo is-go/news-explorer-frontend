@@ -11,25 +11,27 @@ function SearchForm({ articles, loggedIn, isSaved, handleToggleSave }) {
 
   return (
     <section className="search">
-      <p className="search__title">Search Results</p>
-      <ul className="search__content">
-        {articles.slice(0, visibleCount).map((article, index) => (
-          <NewsCard
-            key={article.title}
-            article={article}
-            loggedIn={loggedIn}
-            isSaved={isSaved}
-            index={index}
-            handleToggleSave={handleToggleSave}
-          />
-        ))}
-      </ul>
-      <div className="search__buttons">
-        {visibleCount < Math.min(articles.length, 6) && (
-          <button className="search__more" onClick={handleSeeMore}>
-            See more
-          </button>
-        )}
+      <div className="search__content">
+        <p className="search__title">Search Results</p>
+        <ul className="search__list">
+          {articles.slice(0, visibleCount).map((article, index) => (
+            <NewsCard
+              key={article.title}
+              article={article}
+              loggedIn={loggedIn}
+              isSaved={isSaved}
+              index={index}
+              handleToggleSave={handleToggleSave}
+            />
+          ))}
+        </ul>
+        <div className="search__buttons">
+          {visibleCount < Math.min(articles.length, 6) && (
+            <button className="search__more" onClick={handleSeeMore}>
+              See more
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

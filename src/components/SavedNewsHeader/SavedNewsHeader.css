@@ -1,20 +1,9 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
-    font-family: "Roboto Slab-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-700.woff") format("woff");
-    font-family: "Roboto-700";
-}
-
 .saved-header {
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     color: #1A1B22;
     z-index: 2;
     position: relative;
@@ -34,7 +23,11 @@
 }
 
 .saved-header__header {
-    font-family: Roboto Slab-400;
+    font-family: 'Roboto Slab-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 40px;
     line-height: 46px;
     margin: 0;
@@ -47,8 +40,19 @@
 }
 
 .saved-header__span {
-    font-family: Roboto-700;
+    font-family: 'Roboto-700',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 700;
     margin: 0;
+}
+
+@media (max-width:1276px) {
+    .saved-header {
+        padding-left: 70px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -74,7 +78,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
     .saved-header {
         padding: 8px 16px;
         height: 230px;

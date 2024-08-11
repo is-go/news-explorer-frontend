@@ -2,11 +2,11 @@ import React from "react";
 import { useSavedLocation } from "../../contexts/LocationContext";
 import "./NewsCard.css";
 
-import deleteIcon from "../../assets/trash.svg";
-import deleteIconHover from "../../assets/trash-hover.svg";
-import unsavedIcon from "../../assets/save.svg";
-import unsavedIconHover from "../../assets/save-hover.svg";
-import savedIcon from "../../assets/saved.svg";
+import deleteIcon from "../../images/trash.svg";
+import deleteIconHover from "../../images/trash-hover.svg";
+import unsavedIcon from "../../images/save.svg";
+import unsavedIconHover from "../../images/save-hover.svg";
+import savedIcon from "../../images/saved.svg";
 
 function NewsCard({ article, loggedIn, isSaved, handleToggleSave }) {
   const savedLocation = useSavedLocation();

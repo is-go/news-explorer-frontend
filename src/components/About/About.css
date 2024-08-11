@@ -1,17 +1,14 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-400-regular.woff") format("woff");
-    font-family: "Roboto Slab-400";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
 .about {
     display: flex;
-    padding: 80px 104px;
+    justify-content: center;
     background-color: #fff;
+}
+
+.about__content {
+    display: flex;
+    width: 89%;
+    max-width: 1440px;
+    padding: 80px 0;
     align-items: center;
 }
 
@@ -31,21 +28,29 @@
 }
 
 .about__title {
-    font-family: Roboto Slab-400;
+    font-family: 'Roboto Slab-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 40px;
     line-height: 46px;
     font-weight: 400;
 }
 
 .about__text {
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
 
-    .about {
+    .about__content {
         padding: 40px;
         justify-content: center;
     }
@@ -72,10 +77,14 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
     .about {
-        padding: 24px 16px;
+        padding-top: 24px;
+    }
+
+    .about__content {
         flex-direction: column;
+        padding: 0;
     }
 
     .about__image {

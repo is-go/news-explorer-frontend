@@ -1,13 +1,3 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-500.woff") format("woff");
-    font-family: "Roboto-500";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
 .search-bar {
     display: flex;
     align-items: center;
@@ -28,7 +18,11 @@
     border: none;
     border-radius: 130px;
     width: 100%;
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     padding: 0;
@@ -42,13 +36,17 @@
     right: -4px;
     background-color: #2F71E5;
     color: white;
-    font-family: Roboto-400;
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     border: none;
     border-radius: 130px;
     padding: 20px 56px;
-    cursor: url(../../assets/pointer.svg), auto;
+    cursor: var(--custom-cursor);
     transition: background-color 0.3s ease;
 }
 
@@ -74,7 +72,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
     .search-bar {
         max-width: 294px;
     }

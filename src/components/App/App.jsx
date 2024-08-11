@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
@@ -19,6 +19,7 @@ import { LocationProvider } from "../../contexts/LocationContext";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const searchInputRef = useRef(null);
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
@@ -94,10 +95,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Clear search results when navigating back to the home page
     if (location.pathname === "/") {
       setArticles([]);
       setSearchPerformed(false);
+      if (searchInputRef.current) {
+        searchInputRef.current.value = "";
+      }
     }
   }, [location]);
 
@@ -208,8 +211,10 @@ function App() {
   return (
     <div className="page">
       <div
-        className={`page__image ${
-          location.pathname === "/saved-articles" ? "page__image_saved" : ""
+        className={`page__image  ${
+          location.pathname === "/saved-articles"
+            ? "page__image_saved"
+            : "page__image_mobile"
         }`}
       ></div>
       <div className="page__border"></div>
@@ -233,6 +238,7 @@ function App() {
                   handleTopicChange={handleTopicChange}
                   handleSearchSubmit={handleSearchSubmit}
                   isClicked={isClicked}
+                  searchInputRef={searchInputRef}
                 />
               }
             />

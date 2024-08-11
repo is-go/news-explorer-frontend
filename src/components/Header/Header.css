@@ -1,19 +1,21 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-700.woff") format("woff");
-    font-family: "Roboto Slab-700";
-}
-
 .header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    width: 89%;
+    max-width: 1440px;
     position: relative;
     z-index: 2;
-    padding: 16px 104px 0px;
+    padding: 16px 0px 0px;
+    margin: auto;
 }
 
 .header__title {
-    font-family: Roboto Slab-700;
+    font-family: 'Roboto SLab-700',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     color: #fff;
@@ -37,11 +39,11 @@
 @media (max-width: 768px) {
 
     .header {
-        padding: 15px 40px 0;
+        padding-top: 15px;
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
 
     .header {
         align-items: center;

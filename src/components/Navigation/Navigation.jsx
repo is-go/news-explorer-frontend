@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useSavedLocation } from "../../contexts/LocationContext";
 import "./Navigation.css";
-import logOutIcon from "../../assets/logout.svg";
-import logOutIconBlack from "../../assets/logout-black.svg";
+import logOutIcon from "../../images/logout.svg";
+import logOutIconBlack from "../../images/logout-black.svg";
 
 function Navigation({ loggedIn, handleLoginButton, handleLogoutSubmit }) {
   const savedLocation = useSavedLocation();

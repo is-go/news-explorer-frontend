@@ -1,23 +1,12 @@
-@font-face {
-    src: url("../../vendor/fonts/roboto-slab-700.woff") format("woff");
-    font-family: "Roboto Slab-700";
-}
-
-@font-face {
-    src: url("../../vendor/fonts/roboto-400-regular.woff") format("woff");
-    font-family: "Roboto-400";
-}
-
 .menu {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     z-index: 3;
     visibility: hidden;
     display: none;
-    /* added for consistency with visibility */
 }
 
 .menu_opened {
@@ -30,13 +19,12 @@
     background-color: #1a1b22;
     min-height: 230px;
     max-height: 230px;
-    max-width: 425px;
+    max-width: 525px;
     box-sizing: border-box;
     width: 100%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     margin: 0 auto;
-    /* centers the menu content horizontally */
 }
 
 .menu__header {
@@ -48,14 +36,18 @@
 }
 
 .menu__title {
-    font-family: "Roboto Slab-700";
+    font-family: 'Roboto Slab-700',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 700;
     color: #fff;
     font-size: 16px;
     line-height: 24px;
 }
 
 .menu__close {
-    background-image: url(../../assets/close.svg);
+    background-image: url(../../images/close.svg);
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
@@ -83,7 +75,10 @@
 }
 
 .menu__link {
-    font-family: "Roboto-400";
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
@@ -103,7 +98,11 @@
     color: #fff;
     font-size: 18px;
     line-height: 24px;
-    font-family: "Roboto-400";
+    font-family: 'Roboto-400',
+        'Helvetica',
+        'Arial',
+        sans-serif;
+    font-weight: 400;
     margin-bottom: 24px;
 }
 

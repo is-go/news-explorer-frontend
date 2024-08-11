@@ -2,7 +2,7 @@ import "./MenuModal.css";
 import { Link } from "react-router-dom";
 import { useSavedLocation } from "../../contexts/LocationContext";
 
-import logOutIcon from "../../assets/logout.svg";
+import logOutIcon from "../../images/logout.svg";
 
 function MenuModal({
   isOpen,

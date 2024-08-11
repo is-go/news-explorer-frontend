@@ -21,13 +21,9 @@
     .cards {
         padding: 47px 71px;
     }
-
-    .cards__list>li {
-        max-width: calc(33.33% - 8px);
-    }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 800px) {
     .cards {
         padding: 32px 40px;
     }
@@ -38,9 +34,21 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 727px) {
+    .cards__list {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 456px;
+    }
+
+}
+
+@media (max-width: 525px) {
+
     .cards {
-        padding: 24px 16px 12px;
+        display: flex;
+        justify-content: center;
+        padding-top: 24px;
+
     }
 
     .cards__list {
@@ -50,5 +58,11 @@
 
     .cards__list>li {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .cards {
+        padding: 24px 16px 12px;
     }
 }
