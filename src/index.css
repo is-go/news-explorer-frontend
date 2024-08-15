@@ -1,0 +1,6 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+:root {
+    --custom-cursor: url(../src/images/pointer.svg), auto;
+}
